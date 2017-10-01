@@ -1,0 +1,30 @@
+import random
+com_pick = [random.randrange(1,10,1) for i in range(4)]
+print(com_pick)
+
+def game(num):
+    player_choices = []
+    for i in range(4):
+        player_choice = int(input("Pick a number"))
+        player_choices.append(player_choice)
+    print(player_choices)
+
+    results = []
+    for i in range(4):
+        if num[i] == com_pick[i]:
+            results.append("Yes")
+        elif num[i] != com_pick and num[i] in com_pick:
+            results.append("Meh")
+        else:
+            results.append("No")
+    print(results)
+    return player_choices        
+    return results
+
+
+score = 0
+while player_choices != com_pick:
+    game(player_choices)
+    score += 1
+
+print ("It took you {} tries to guess the correct answer!".format(score))
